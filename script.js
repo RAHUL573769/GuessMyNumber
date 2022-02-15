@@ -16,7 +16,7 @@
 
 // console.log(document.querySelector('.number').innerHTML);
 
-const secretNumber=parseInt(Math.trunc(Math.random()*20));
+let  secretNumber=parseInt(Math.trunc(Math.random()*20));
 // console.log(typeof(secretNumber));
 document.querySelector(".number").innerHTML=secretNumber;
 let score=20;
@@ -67,4 +67,20 @@ document.querySelector('.check').addEventListener('click',function(){
 
     }
     //When score is lesser
+})
+
+document.querySelector('.again').addEventListener('click',function(){
+    // console.log("clicked");
+
+score=20;
+    secretNumber=parseInt(Math.trunc(Math.random()*20));
+
+    document.querySelector('.message').textContent="Start guessing...";
+    secretNumber=0;
+    document.querySelector(".number").innerHTML='?';
+    document.querySelector('.score').innerHTML=score;
+    document.querySelector('.guess').value='';
+    document.querySelector('body').style.backgroundColor=" #222";
+    document.querySelector('.number').style.width='15rem';
+
 })
