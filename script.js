@@ -20,6 +20,7 @@ let  secretNumber=parseInt(Math.trunc(Math.random()*20));
 // console.log(typeof(secretNumber));
 document.querySelector(".number").innerHTML=secretNumber;
 let score=20;
+let highScore=0;
 document.querySelector('.check').addEventListener('click',function(){
     const guess=parseInt(document.querySelector('.guess').value);
     // console.log((guess));
@@ -32,6 +33,11 @@ document.querySelector('.check').addEventListener('click',function(){
         document.querySelector('.message').textContent="You Have Won The Game";
         document.querySelector('body').style.backgroundColor=" #60b347";
         document.querySelector('.number').style.width='30rem';
+    if(score>highScore){
+        highScore=score;
+        document.querySelector(".highscore").innerHTML=highScore;
+    }
+    
     }
     //When player wins
     else if(guess>secretNumber){
@@ -82,5 +88,6 @@ score=20;
     document.querySelector('.guess').value='';
     document.querySelector('body').style.backgroundColor=" #222";
     document.querySelector('.number').style.width='15rem';
+    document.querySelector(".highscore").innerHTML=0;
 
 })
